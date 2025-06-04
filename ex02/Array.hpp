@@ -57,6 +57,13 @@ public:
 			throw OutOfBoundsException();
 		return (this->_arr[i]);
 	}
+	
+	const T&	operator[](unsigned int i) const
+	{
+		if (i >= this->_size)
+			throw OutOfBoundsException();
+		return (this->_arr[i]);
+	}
 
 	class	OutOfBoundsException: public std::exception
 	{

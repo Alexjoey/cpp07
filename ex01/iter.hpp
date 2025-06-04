@@ -18,3 +18,10 @@ void	iter(T array[], unsigned int len, void (*func)(T& member))
 	for (unsigned int i = 0; i < len; i++)
 		func(array[i]);
 }
+
+template<typename T>
+void	iter(T array[], unsigned int len, void (*func)(const T& member))
+{
+	for (unsigned int i = 0; i < len; i++)
+		func(array[i]);
+}

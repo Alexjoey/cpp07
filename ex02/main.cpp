@@ -106,11 +106,19 @@ void testEmptyArray()
     }
 }
 
+void testConstArray()
+{
+	const Array<int> arr(5);
+//	arr[0] = 10;
+	std::cout << "content of const array: " << arr[0] << std::endl;
+}
+
 int main()
 {
     testIntArray();
     testStringArray();
     testOutOfBounds();
     testEmptyArray();
+	testConstArray();
     return 0;
 }
