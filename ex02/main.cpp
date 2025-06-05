@@ -6,7 +6,7 @@
 /*   By: amylle <alexm@live.be>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 21:05:37 by amylle            #+#    #+#             */
-/*   Updated: 2025/02/24 21:06:46 by amylle           ###   ########.fr       */
+/*   Updated: 2025/06/05 23:47:10 by amylle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,18 @@ void testEmptyArray()
     catch (const std::exception &e) {
         std::cerr << "Exception caught: " << e.what() << "\n";
     }
+	Array<int> arr(5);
+	emptyArr = arr;
+	std::cout << "Trying to access copied to empty array\n";
+	std::cout << emptyArr[0] << "\n"; // Should throw an exception
 }
 
 void testConstArray()
 {
-	const Array<int> arr(5);
+    std::cout << "\n===== Testing Const Array =====\n";
+	Array<int> temp(1);
+	temp[0] = 5;
+	const Array<int> arr = temp;
 //	arr[0] = 10;
 	std::cout << "content of const array: " << arr[0] << std::endl;
 }
